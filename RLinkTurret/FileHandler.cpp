@@ -5,7 +5,7 @@
 
 using namespace std;
 
-string const IP_ADDRESS_PATH("C:\\Users\wbloo\OneDrive\Documents\RLC_IP_ADDRESS.txt");
+string const IP_ADDRESS_PATH("C:\\Users\\wbloo\\OneDrive\\Documents\\RLC_IP_ADDRESS.txt");
 
 IPCamera::IPCamera()
 {
@@ -27,6 +27,11 @@ IPCamera::IPCamera()
 string IPCamera::get_rtsp_url() const
 {
 	return ("rtsp://" + user_credentials + ip_address + ":" + rtsp_port + rtsp_path);
+}
+
+string IPCamera::get_ip_address() const
+{
+	return ip_address;
 }
 
 IPCamera::~IPCamera()

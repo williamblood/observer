@@ -11,12 +11,12 @@ public:
 	IPCamera();
 
 	std::string get_rtsp_url() const;
-	std::string ip_address;
-
+	std::string get_ip_address() const;
 	
 	~IPCamera();
 
 private:
+	std::string ip_address;
 	std::string rtsp_url;
 	std::string rtsp_port;
 	std::string rtsp_path;
