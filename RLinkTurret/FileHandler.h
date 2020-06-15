@@ -3,8 +3,24 @@
 
 #include <string>
 
-std::string const IP_ADDRESS_PATH( "C:\\Users\\wbloo\\OneDrive\\Desktop\\C\\OpenCV_IPC\\RLC_IP_ADDRESS.txt" );
-
 // TODO: Find RLC_IP_ADDRESS.txt file and extract address
+
+class IPCamera
+{
+public:
+	IPCamera();
+
+	std::string get_rtsp_url() const;
+	std::string ip_address;
+
+	
+	~IPCamera();
+
+private:
+	std::string rtsp_url;
+	std::string rtsp_port;
+	std::string rtsp_path;
+	std::string user_credentials;
+};
 
 #endif // !FILE_HANDLER_!
