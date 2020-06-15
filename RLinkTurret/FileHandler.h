@@ -20,7 +20,8 @@ private:
 	std::string rtsp_url;
 	std::string rtsp_port;
 	std::string rtsp_path;
-	std::string user_credentials;
+	std::string rtsp_username;
+	std::string rtsp_password;
 };
 
 #endif // !FILE_HANDLER_!

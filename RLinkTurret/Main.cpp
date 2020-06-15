@@ -13,7 +13,7 @@ void renderStream(const string& rtspURL);
 int main()
 {
 	IPCamera myCam;		// initialize device
-
+	string url = myCam.get_rtsp_url();
 	cout << "\n-------------------------------------\n"
 		<< "[CAMERA]\nIP ADDRESS:\t"
 		<< myCam.get_ip_address()

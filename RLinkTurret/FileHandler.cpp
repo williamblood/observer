@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <assert.h>
 
 #include "FileHandler.h"
 
@@ -14,19 +15,22 @@ IPCamera::IPCamera()
 	if (ipcSrcFile.is_open())
 	{
 		getline(ipcSrcFile, ip_address);
+		getline(ipcSrcFile, rtsp_username);
+		getline(ipcSrcFile, rtsp_password);
+		getline(ipcSrcFile, rtsp_port);
+		getline(ipcSrcFile, rtsp_path);
 
 		ipcSrcFile.close();
 	}
 	else
 		cerr << "File not found.\n";
-
-	rtsp_path = "//h264Preview_01_main";
-	rtsp_port = "544";
 }
 
 string IPCamera::get_rtsp_url() const
 {
-	return ("rtsp://" + user_credentials + ip_address + ":" + rtsp_port + rtsp_path);
+	return ("rtsp://" + rtsp_username + ":" + rtsp_password
+		+ "@" + ip_address + ":" + rtsp_port 
+		+ "//" + rtsp_path);
 }
 
 string IPCamera::get_ip_address() const
